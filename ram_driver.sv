@@ -14,9 +14,9 @@ class ram_driver;
 covergroup drv_cg;
   WRITE:   coverpoint drv_trans.write_enb { bins wrt[]={0,1};}
   READ :   coverpoint drv_trans.read_enb  { bins  rd[]={0,1};}
-  DATA_IN: coverpoint drv_trans.data_in   { bins data ={[0:255]};}
-  ADDRESS: coverpoint drv_trans.address   { bins address={[0:31]};}
-  WRXRD:   cross WRITE,READ;
+  DATA_IN: coverpoint drv_trans.data_in   { bins data[]={[0:255]};}
+  ADDRESS: coverpoint drv_trans.address   { bins address[]={[0:31]};}
+  WRXRD:   cross WRITE,READ; //make this an illegal bin
 endgroup
  
 //METHODS
